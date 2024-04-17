@@ -1,0 +1,5 @@
+python-dotenv
+uvicorn
+starlette
+starlette-admin
+odmantic

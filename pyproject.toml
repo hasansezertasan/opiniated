@@ -10,17 +10,25 @@ readme = "README.md"
 requires-python = ">=3.8"
 license = "MIT"
 keywords = []
-authors = [
-  { name = "Hasan Sezer Taşan", email = "hasansezertasan@gmail.com" },
-]
+authors = [{ name = "Hasan Sezer Taşan", email = "hasansezertasan@gmail.com" }]
 classifiers = [
-  "Development Status :: 4 - Beta",
+  "Development Status :: 1 - Planning",
+  "Topic :: Internet",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "License :: OSI Approved :: MIT License",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Typing :: Typed",
+  'Environment :: Web Environment',
   "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.7",
   "Programming Language :: Python :: 3.8",
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
-  "Programming Language :: Python :: 3.12",
+  'Programming Language :: Python :: 3.12',
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
@@ -59,7 +67,7 @@ python = ["3.8", "3.9", "3.10", "3.11", "3.12"]
 [tool.hatch.envs.types]
 dependencies = [
   "mypy>=1.0.0",
-  "ruff==0.2.0",
+  "ruff==0.3.7",
   "sqlalchemy-stubs>=0.4",
   "types-WTForms>=3.1",
 ]
@@ -97,6 +105,12 @@ ignore = [
 # Allow fix for all enabled rules (when `--fix`) is provided.
 fixable = ["ALL"]
 
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.isort]
+known-third-party = ["opinionated_mixins"]
+
 [tool.ruff.format]
 # Like Black, use double quotes for strings.
 quote-style = "double"
@@ -106,12 +120,6 @@ indent-style = "space"
 skip-magic-trailing-comma = false
 # Like Black, automatically detect the appropriate line ending.
 line-ending = "auto"
-
-[tool.ruff.lint.pydocstyle]
-convention = "google"
-
-[tool.ruff.lint.isort]
-known-third-party = ["opinionated_mixins"]
 
 [tool.mypy]
 strict = true
@@ -130,17 +138,14 @@ disallow_untyped_defs = true
 source_pkgs = ["opinionated_mixins", "tests"]
 branch = true
 parallel = true
-omit = [
-  "src/opinionated_mixins/__about__.py",
-]
+omit = ["src/opinionated_mixins/__about__.py"]
 
 [tool.coverage.paths]
-opinionated_mixins = ["src/opinionated_mixins", "*/opinionated-mixins/src/opinionated_mixins"]
+opinionated_mixins = [
+  "src/opinionated_mixins",
+  "*/opinionated-mixins/src/opinionated_mixins",
+]
 tests = ["tests", "*/opinionated-mixins/tests"]
 
 [tool.coverage.report]
-exclude_lines = [
-  "no cov",
-  "if __name__ == .__main__.:",
-  "if TYPE_CHECKING:",
-]
+exclude_lines = ["no cov", "if __name__ == .__main__.:", "if TYPE_CHECKING:"]

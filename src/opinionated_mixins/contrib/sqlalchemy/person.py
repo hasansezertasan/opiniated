@@ -1,6 +1,9 @@
-from sqlalchemy import Column, Date, String
+from sqlalchemy import Column
+from sqlalchemy.orm import declarative_mixin
+from sqlalchemy.sql.sqltypes import Date, String
 
 
+@declarative_mixin
 class Person:
     """
     SQLAlchemy `Person` model that represents a person.
