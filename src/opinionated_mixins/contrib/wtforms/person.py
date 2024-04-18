@@ -1,14 +1,15 @@
+# Copyright 2024 Hasan Sezer Taşan <hasansezertasan@gmail.com>
+# Copyright (C) 2024 <hasansezertasan@gmail.com>
 from wtforms import DateField, EmailField, StringField
 from wtforms.validators import DataRequired, Length, Optional
 
 
 class Person:
-    """
-    WTForms `Person` form that represents a person.
-    """
+    """WTForms `Person` form that represents a person."""
 
     first_name = StringField(
-        label="First name", validators=[Length(min=1, max=64), DataRequired()]
+        label="First name",
+        validators=[Length(min=1, max=64), DataRequired()],
     )
     """
     First name of the person.
@@ -16,7 +17,8 @@ class Person:
     Maximum length: 64 characters.
     """
     last_name = StringField(
-        label="Last name", validators=[Length(min=1, max=64), DataRequired()]
+        label="Last name",
+        validators=[Length(min=1, max=64), DataRequired()],
     )
     """
     Last name of the person.
@@ -64,7 +66,8 @@ class Person:
     Maximum length: 64 characters.
     """
     postal_code = StringField(
-        label="Postal code", validators=[Length(min=1, max=64), Optional()]
+        label="Postal code",
+        validators=[Length(min=1, max=64), Optional()],
     )
     """
     Postal code of the person.

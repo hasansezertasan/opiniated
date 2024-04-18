@@ -4,10 +4,9 @@ import os
 from pathlib import Path
 
 from dotenv import load_dotenv
-from motor.motor_asyncio import AsyncIOMotorClient
-from odmantic.engine import AIOEngine
+from mongoengine import connect
 from starlette.applications import Starlette
-from starlette_admin.contrib.odmantic import Admin, ModelView
+from starlette_admin.contrib.mongoengine import Admin, ModelView
 
 from .models import Person
 
@@ -19,7 +18,7 @@ MONGODB_NAME = os.getenv("MONGODB_NAME")
 
 
 app = Starlette()
-engine = AIOEngine(client=AsyncIOMotorClient(MONGO_URI), database=MONGODB_NAME)
-admin = Admin(engine=engine, title="ODMantic", base_url="/")
+connection = connect(host=MONGO_URI, db=MONGODB_NAME)
+admin = Admin(title="MongoEngine", base_url="/")
 admin.add_view(ModelView(Person, icon="fa fa-user", name="Person", label="Person"))
 admin.mount_to(app)

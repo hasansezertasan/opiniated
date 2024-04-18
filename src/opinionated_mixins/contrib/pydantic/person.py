@@ -1,13 +1,13 @@
+# Copyright 2024 Hasan Sezer Taşan <hasansezertasan@gmail.com>
+# Copyright (C) 2024 <hasansezertasan@gmail.com>
 import datetime
+from typing import Optional
 
 from pydantic import BaseModel, Field
-from typing_extensions import Optional
 
 
 class Person(BaseModel):
-    """
-    Pydantic `Person` model that represents a person.
-    """
+    """Pydantic `Person` model that represents a person."""
 
     first_name: str = Field(..., min_length=1, max_length=64)
     last_name: str = Field(..., min_length=1, max_length=64)

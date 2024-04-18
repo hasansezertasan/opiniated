@@ -1,14 +1,15 @@
+# Copyright 2024 Hasan Sezer Taşan <hasansezertasan@gmail.com>
+# Copyright (C) 2024 <hasansezertasan@gmail.com>
 import datetime
 from dataclasses import dataclass, field
+from typing import Optional
 
-from typing_extensions import Annotated, Doc, Optional
+from typing_extensions import Annotated, Doc
 
 
 @dataclass
 class Person:
-    """
-    `Person` dataclass represents a person.
-    """
+    """`Person` dataclass represents a person."""
 
     first_name: Annotated[
         str,
@@ -17,7 +18,7 @@ class Person:
             First name of the person.
             Minimum length: 1 character.
             Maximum length: 64 characters.
-            """
+            """,
         ),
     ]
     last_name: Annotated[
@@ -27,7 +28,7 @@ class Person:
             Last name of the person.
             Minimum length: 1 character.
             Maximum length: 64 characters.
-            """
+            """,
         ),
     ]
     middle_name: Annotated[
@@ -37,7 +38,7 @@ class Person:
             Middle name of the person.
             Minimum length: 1 character.
             Maximum length: 64 characters.
-            """
+            """,
         ),
     ] = field(default=None)
     phone: Annotated[
@@ -47,7 +48,7 @@ class Person:
             Phone number of the person.
             Minimum length: 1 character.
             Maximum length: 64 characters.
-            """
+            """,
         ),
     ] = field(default=None)
     email: Annotated[
@@ -57,7 +58,7 @@ class Person:
             Email address of the person.
             Minimum length: 1 character.
             Maximum length: 64 characters.
-            """
+            """,
         ),
     ] = field(default=None)
     address: Annotated[
@@ -67,7 +68,7 @@ class Person:
             Address of the person.
             Minimum length: 1 character.
             Maximum length: 64 characters.
-            """
+            """,
         ),
     ] = field(default=None)
     postal_code: Annotated[
@@ -77,7 +78,7 @@ class Person:
             Postal code of the person.
             Minimum length: 1 character.
             Maximum length: 64 characters.
-            """
+            """,
         ),
     ] = field(default=None)
     city: Annotated[
@@ -87,7 +88,7 @@ class Person:
             City of the person.
             Minimum length: 1 character.
             Maximum length: 64 characters.
-            """
+            """,
         ),
     ] = field(default=None)
     country: Annotated[
@@ -97,7 +98,7 @@ class Person:
             Country of the person.
             Minimum length: 1 character.
             Maximum length: 64 characters.
-            """
+            """,
         ),
     ] = field(default=None)
     date_birth: Annotated[
@@ -105,7 +106,7 @@ class Person:
         Doc(
             """
             Birth date of the person.
-            """
+            """,
         ),
     ] = field(default=None)
     description: Annotated[
@@ -115,6 +116,6 @@ class Person:
             Description of the person.
             Minimum length: 1 character.
             Maximum length: 64 characters.
-            """
+            """,
         ),
     ] = field(default=None)
