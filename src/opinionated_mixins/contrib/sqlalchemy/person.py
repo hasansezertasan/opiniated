@@ -15,9 +15,9 @@ class Person:
     !!! example
         How to override the `Person` model:
         ```python
-        from sqlalchemy import Column, Integer
-        from sqlalchemy.ext.declarative import declarative_base
         from opinionated_mixins.contrib.sqlalchemy.person import Person as SQLAPerson
+        from sqlalchemy import Column, Integer, String
+        from sqlalchemy.ext.declarative import declarative_base
 
         Base = declarative_base()
 

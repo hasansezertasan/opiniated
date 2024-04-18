@@ -13,7 +13,6 @@ from .models import Person
 
 basedir = Path(__file__).resolve().parent
 load_dotenv(basedir / ".env")
-
 MONGO_URI = os.getenv("MONGO_URI")
 MONGODB_NAME = os.getenv("MONGODB_NAME")
 
